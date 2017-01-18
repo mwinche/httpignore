@@ -6,7 +6,7 @@ This is a utility and CLI for interfacing with `.httpignore` files.
 ### A word on `.httpignore` files
 
 I made them up (thanks to @lund0n for the inspiration). I wanted a way to be
-able to serve up files from my node_modules directory but to allow individual
+able to serve up files from my `node_modules` directory but to allow individual
 modules to mark things which, while they are published, ought not to be served
 over HTTP.
 
@@ -14,9 +14,9 @@ My use case was for a private npm registry where I don't mind if internal people
 can see, say, our README.md files, but I don't want all our internal documentation
 to be customer facing.
 
-The approach is simple and should very familiar if you've used a `.npmignore` or
-a `.gitignore` file. It follows all the same rules as those files. In this case
-they define what files ought *not* be served over HTTP.
+The approach is simple and should be very familiar if you've used a `.npmignore`
+or a `.gitignore` file. It follows all the same rules as those files. In this
+case they define what files ought *not* be served over HTTP.
 
 ### API
 
