@@ -1,0 +1,25 @@
+{
+  "name": "httpignore",
+  "version": "1.0.0",
+  "description": "Programmatic and CLI access to reading and computing the results of a .httpignore file",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mwinche/httpignore.git"
+  },
+  "keywords": [
+    "http",
+    "httpignore",
+    "node_modules",
+    "public"
+  ],
+  "author": "Matt Winchester",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mwinche/httpignore/issues"
+  },
+  "homepage": "https://github.com/mwinche/httpignore#readme"
+}
