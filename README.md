@@ -1,6 +1,8 @@
 httpignore
 ==========
 
+[![Build Status](https://travis-ci.org/mwinche/httpignore.svg?branch=master)](https://travis-ci.org/mwinche/httpignore)
+
 This is a utility and CLI for interfacing with `.httpignore` files.
 
 ### A word on `.httpignore` files
