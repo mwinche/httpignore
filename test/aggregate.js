@@ -57,3 +57,26 @@ test(`should prefix for modules`, t => {
 
   t.deepEqual(aggregator.files(), expected);
 });
+
+test(`should ignore comments and empty lines`, t => {
+  const aggregator = setup();
+
+  aggregator.addModule('lodash', [
+    'README.md',
+    'package.json',
+    'README.md',
+    '#comment',
+    '  # a comment ',
+    '',
+    ' ',
+    '   '
+  ]);
+
+  const expected = [
+    'node_modules/lodash/README.md',
+    'node_modules/lodash/package.json',
+    'node_modules/lodash/README.md'
+  ];
+
+  t.deepEqual(aggregator.files(), expected);
+});
