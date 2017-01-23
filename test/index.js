@@ -106,7 +106,7 @@ test(`should tell which files are allowed`, t => {
     .then(files => t.deepEqual(files.sort(), expected.sort()));
 });
 
-test.only(`should do the copy`, t => {
+test(`should do the copy`, t => {
   const expectedFiles = [
     './node_modules/one/dist/main.js',
     './node_modules/@scope/two/styles.css',
