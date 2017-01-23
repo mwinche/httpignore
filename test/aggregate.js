@@ -15,8 +15,9 @@ test(`should take a single list of files`, t => {
   ]);
 
   const expected = [
-    'README.md',
-    'package.json'
+    './README.md',
+    './package.json',
+    './.httpignore'
   ];
 
   t.deepEqual(aggregator.files(), expected);
@@ -32,9 +33,10 @@ test(`should preserve duplicates`, t => {
   ]);
 
   const expected = [
-    'README.md',
-    'package.json',
-    'README.md'
+    './README.md',
+    './package.json',
+    './README.md',
+    './.httpignore'
   ];
 
   t.deepEqual(aggregator.files(), expected);
@@ -50,9 +52,10 @@ test(`should prefix for modules`, t => {
   ]);
 
   const expected = [
-    'node_modules/lodash/README.md',
-    'node_modules/lodash/package.json',
-    'node_modules/lodash/README.md'
+    './node_modules/lodash/README.md',
+    './node_modules/lodash/package.json',
+    './node_modules/lodash/README.md',
+    './node_modules/lodash/.httpignore'
   ];
 
   t.deepEqual(aggregator.files(), expected);
@@ -73,9 +76,10 @@ test(`should ignore comments and empty lines`, t => {
   ]);
 
   const expected = [
-    'node_modules/lodash/README.md',
-    'node_modules/lodash/package.json',
-    'node_modules/lodash/README.md'
+    './node_modules/lodash/README.md',
+    './node_modules/lodash/package.json',
+    './node_modules/lodash/README.md',
+    './node_modules/lodash/.httpignore'
   ];
 
   t.deepEqual(aggregator.files(), expected);
