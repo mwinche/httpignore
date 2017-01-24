@@ -20,6 +20,10 @@ The approach is simple and should be very familiar if you've used a `.npmignore`
 or a `.gitignore` file. It follows all the same rules as those files. In this
 case they define what files ought *not* be served over HTTP.
 
+### Installation
+
+`npm install httpignore`. All the normal flags apply.
+
 ### API
 
 #### ignored()
