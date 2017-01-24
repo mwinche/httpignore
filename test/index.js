@@ -38,6 +38,7 @@ const copyStub = (() => {
   const stub = (_files, _dest, cb) => {
     files = _files;
     dest = _dest;
+    count++;
     cb(null, _files);
   };
 
@@ -121,7 +122,7 @@ test(`should do the copy`, t => {
   return api.copy(expectedDest)
     .then(({ success }) => {
       t.true(success, `did not return expected result`);
-      t.is(copyStub.count(), 0, `copyStub was never called`);
+      t.is(copyStub.count(), 1, `copyStub was never called`);
       t.deepEqual(
         copyStub.files().sort(),
         expectedFiles.sort(),
