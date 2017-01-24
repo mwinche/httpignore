@@ -22,11 +22,31 @@ case they define what files ought *not* be served over HTTP.
 
 ### API
 
-In development
+#### ignored()
+
+Returns a promise which resolves with an array of all the filters that are being
+applied via the `.httpignore` files.
+
+#### files()
+
+Returns a promise which resolves with an array of all files which are allowed
+after the filters are applied.
+
+#### copy(dest)
+
+Returns a promise which resolves once all files from the `files` call are
+copied to the directory `dest`. If `dest` does not exist, it will create it.
 
 ### CLI
 
-In development
+Usage:
+
+```
+httpignore-copy <dest>
+```
+
+Performs the `copy` api method on the directory specified by `dest`. Paths are
+relative to the current working directory.
 
 ### Development
 
