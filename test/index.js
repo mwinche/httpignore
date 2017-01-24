@@ -66,7 +66,7 @@ function setup(){
 
   const api = proxyquire('../lib/index.js', requireMocks);
 
-  const mocks = {
+  const fsMocks = {
     "./node_modules/one/dist/main.js": 'console.log("just a mock");',
     "./node_modules/@scope/two/styles.css": 'console.log("just a mock");',
     "./node_modules/@scope/two/styles.min.css": 'console.log("just a mock");',
@@ -79,7 +79,7 @@ function setup(){
     "./node_modules/one/dist/other.json": '{ "mock": true }'
   };
 
-  mock(mocks);
+  mock(fsMocks);
 
   return api;
 }
