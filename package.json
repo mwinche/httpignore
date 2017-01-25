@@ -1,6 +1,6 @@
 {
   "name": "httpignore",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Programmatic and CLI access to reading and computing the results of a .httpignore file",
   "main": "lib/index.js",
   "bin": {
