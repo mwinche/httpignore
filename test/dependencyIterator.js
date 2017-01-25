@@ -30,10 +30,10 @@ function setup(){
   );
 
   mock({
-    "one/.httpignore": ONE_HTTPIGNORE,
-    "@scope/two/.httpignore": TWO_HTTPIGNORE,
-    "thr-ee/.httpignore": THREE_HTTPIGNORE,
-    './.httpignore': BASE_HTTPIGNORE
+    "one/httpignore": ONE_HTTPIGNORE,
+    "@scope/two/httpignore": TWO_HTTPIGNORE,
+    "thr-ee/httpignore": THREE_HTTPIGNORE,
+    './httpignore': BASE_HTTPIGNORE
   });
 
   return dependencyIterator;
@@ -42,7 +42,7 @@ function setup(){
 test.afterEach(mock.restore);
 
 test(`should loop over all provided dependencies and
-  look for .httpignore files`, t => {
+  look for httpignore files`, t => {
     const iterator = setup();
 
     const deps = [
@@ -62,10 +62,10 @@ test(`should loop over all provided dependencies and
       './node_modules/@scope/two/package.json',
       './node_modules/@scope/two/README.md',
       './node_modules/thr-ee/./*.es',
-      './.httpignore',
-      './node_modules/one/.httpignore',
-      './node_modules/@scope/two/.httpignore',
-      './node_modules/thr-ee/.httpignore'
+      './httpignore',
+      './node_modules/one/httpignore',
+      './node_modules/@scope/two/httpignore',
+      './node_modules/thr-ee/httpignore'
     ];
 
     return iterator(deps)
