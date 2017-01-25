@@ -3,9 +3,9 @@ httpignore
 
 [![Build Status](https://travis-ci.org/mwinche/httpignore.svg?branch=master)](https://travis-ci.org/mwinche/httpignore)
 
-This is a utility and CLI for interfacing with `.httpignore` files.
+This is a utility and CLI for interfacing with `httpignore` files.
 
-### A word on `.httpignore` files
+### A word on `httpignore` files
 
 I made them up (thanks to @lund0n for the inspiration). I wanted a way to be
 able to serve up files from my `node_modules` directory but to allow individual
@@ -29,7 +29,7 @@ case they define what files ought *not* be served over HTTP.
 #### ignored()
 
 Returns a promise which resolves with an array of all the filters that are being
-applied via the `.httpignore` files.
+applied via the `httpignore` files.
 
 #### files()
 
