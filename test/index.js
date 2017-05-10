@@ -34,17 +34,18 @@ const IGNORES = [
 
 const copyStub = (() => {
   let count = 0;
-  let files, dest;
-  const stub = (_files, _dest, cb) => {
-    files = _files;
+  let files = [];
+  let dest;
+  const stub = (file, _dest, cb) => {
+    files.push(file);
     dest = _dest;
     count++;
-    cb(null, _files);
+    cb(null, file);
   };
 
   stub.reset = () => {
     count = 0;
-    files = undefined;
+    files = [];
     dest = undefined;
   };
   stub.files = () => files;
@@ -59,7 +60,7 @@ function setup(){
 
   const requireMocks = {
     './dependencyIterator.js': () => Promise.resolve(IGNORES),
-    'copy': copyStub
+    'fs-extra': { copy: copyStub }
   };
 
   requireMocks[path.join(process.cwd(), 'package.json')] = PACKAGE_JSON;
@@ -119,14 +120,18 @@ test(`should do the copy`, t => {
 
   const api = setup();
 
-  return api.copy(expectedDest)
+  return api.copy('./dest')
     .then(({ success }) => {
       t.true(success, `did not return expected result`);
-      t.is(copyStub.count(), 1, `copyStub was never called`);
+      t.is(copyStub.count(), expectedFiles.length, `copyStub was never called`);
+
       t.deepEqual(
         copyStub.files().sort(),
         expectedFiles.sort(),
         `Didn't try to copy the expected files`);
-      t.is(copyStub.dest(), expectedDest, `Didn't try to copy to the expected destination`);
+
+      t.true(
+        !!copyStub.dest().match(/^dest\//),
+        `Didn't try to copy to the expected destination`);
     });
 });

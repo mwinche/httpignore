@@ -31,10 +31,11 @@
     "proxyquire": "1.7.10"
   },
   "dependencies": {
-    "copy": "0.3.0",
+    "fs-extra": "3.0.1",
     "glob": "7.1.1",
     "ignore": "3.2.0",
     "mkdirp": "0.5.1",
+    "promise-async": "0.2.0",
     "resolve-from": "2.0.0"
   }
 }
